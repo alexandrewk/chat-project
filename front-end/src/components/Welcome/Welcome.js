@@ -1,4 +1,5 @@
 import {} from 'react';
+import "./Welcome.css"
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 // Layout
@@ -18,7 +19,7 @@ export default () => {
         direction="row"
         justify="center"
         alignItems="center"
-        spacing={5}
+        spacing={2}
       >
         <Grid item xs>
           <div className="card">

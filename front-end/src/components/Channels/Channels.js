@@ -21,7 +21,7 @@ export default ({
     <div className="channels">
         <div className="channels-home">
             <ul>
-                <li><Link to={"../Welcome/Welcome"}>Home</Link></li>
+                <li>Home</li>
             </ul>
         </div>
         <div className="channels-header">

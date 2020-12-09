@@ -1,0 +1,57 @@
+.login {
+    color: white;
+    background-color: #494f9e;
+    border-radius: 20px;
+    padding: 2% 0 2% 0;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+input,
+.btn {
+    width: 55%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    opacity: 0.95;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    outline:none;
+}
+
+input:hover,
+.btn:hover {
+    opacity: 1;
+}
+
+.sign-in-form, fieldset{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border: none;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+   
+input[type="submit"]:hover {
+    background-color: #45a049;
+    transition: 0.2s;
+}
+
+input[type="submit"]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+input[type="submit"]:focus{
+    outline: none;
+}

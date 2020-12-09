@@ -3,6 +3,7 @@ import {forwardRef, useImperativeHandle, useLayoutEffect, useRef} from 'react'
 import { jsx } from '@emotion/core'
 // Layout
 import { useTheme } from '@material-ui/core/styles';
+import "./List.css";
 // Markdown
 import unified from 'unified'
 import markdown from 'remark-parse'

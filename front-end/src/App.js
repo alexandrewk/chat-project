@@ -5,27 +5,27 @@ import { jsx } from '@emotion/core'
 // Local
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import Main from './Main'
-import Login from './Login'
+import Main from './components/Main/Main'
+import Login from './components/Login/Login'
 
-const styles = {
-  root: {
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundColor: '#565E71',
-  },
-}
 
 export default () => {
-  const [user, setUser] = useState(null)
-  return (
-    <div className="App" css={styles.root}>
-      <Header />
-      {
-        user ? <Main /> : <Login onUser={setUser} />
-      }
-      <Footer />
+    const [user, setUser] = useState(false)
+    const handleLogin = e => {
+        e.preventDefault();
+        setUser(true);
+    }
+    const handleLogout = e => {
+        e.preventDefault();
+        setUser(false);
+    }
+    return (
+    <div className="App">
+        <Header />
+            {
+            user ? <Main /> : <Login onUser={setUser} />
+            }
+        <Footer />
     </div>
-  );
+    );
 }

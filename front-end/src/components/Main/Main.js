@@ -2,19 +2,10 @@ import {useState} from 'react'
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 // Local
-import Channels from './components/Channels/Channels'
-import Channel from './components/Channel/Channel'
-import Welcome from './components/Welcome/Welcome'
-
-const styles = {
-  main: {
-    backgroundColor: '#373B44',
-    overflow: 'hidden',
-    flex: '1 1 auto',
-    display: 'flex',
-    flexDirection: 'row',
-  },
-}
+import Channels from '../Channels/Channels'
+import Channel from '../Channel/Channel'
+import Welcome from '../Welcome/Welcome'
+import "./Main.css"
 
 export default () => {
   const [channel, setChannel] = useState(null)
@@ -22,7 +13,7 @@ export default () => {
     setChannel(channel)
   }
   return (
-    <main css={styles.main}>
+    <main className="main">
       <Channels onChannel={fetchChannel} />
       {channel ? <Channel channel={channel} messages={[]} /> : <Welcome />}
     </main>
