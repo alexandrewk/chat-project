@@ -1,0 +1,22 @@
+.channels-header{
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.channels-home{
+    padding: 0px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+.channels-list{
+    min-width: 200px;
+}
+
+.channels-link{
+    font-size: 20px;
+    padding: .5rem .5rem;
+    white-space: nowrap;
+}

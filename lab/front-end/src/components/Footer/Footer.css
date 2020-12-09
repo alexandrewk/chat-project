@@ -1,0 +1,6 @@
+.footer {
+    height: 30px;
+    background-image: linear-gradient(to right,#494f9e, #9198e5);
+    flex-shrink: 0;
+    text-align: center;
+}
