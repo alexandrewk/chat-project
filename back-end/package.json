@@ -17,7 +17,7 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
-    "mocha": "^8.2.1"
+    "mocha": "^8.1.3"
   },
   "keywords": [
     "tech",
@@ -40,6 +40,6 @@
     "reset": "node bin/reset",
     "develop": "node bin/init && node bin/start",
     "start": "node bin/start",
-    "test": "mocha 'test/**/*.js'"
+    "test": "node mocha 'test/**/*.js'"
   }
 }

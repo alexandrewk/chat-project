@@ -11,7 +11,7 @@ import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = (theme) => {
   // See https://github.com/mui-org/material-ui/blob/next/packages/material-ui/src/OutlinedInput/OutlinedInput.js
-  const borderColor = theme.palette.mode === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)';
+  const borderColor = theme.palette.mode === 'light' ? 'rgba(0, 255, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)';
   return {
     form: {
       borderTop: `2px solid ${borderColor}`,
@@ -19,10 +19,10 @@ const useStyles = (theme) => {
       display: 'flex',
     },
     content: {
-      flex: '1 1 auto',
-      '&.MuiTextField-root': {
+        flex: '1 1 auto',
+        '&.MuiTextField-root': {
         marginRight: theme.spacing(1),
-      },
+        },
     },
     send: {
     },
