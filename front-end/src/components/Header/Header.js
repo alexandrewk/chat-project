@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
-import React from 'react';
 import './Header.css';
 import ForumIcon from '@material-ui/icons/Forum';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -17,7 +16,7 @@ function Header() {
             </div>
             <div className="header-right">
                 <Tooltip title="Github">
-                    <GitHubIcon onClick={event => window.location.href='https://github.com/alexandrewk/chat-project'} />
+                    <GitHubIcon onClick={event => window.open('https://github.com/alexandrewk/chat-project')} />
                 </Tooltip>
             </div>
         </div>

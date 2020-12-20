@@ -2,11 +2,12 @@
 import { jsx } from '@emotion/core'
 import "./Footer.css"
 
-
-export default () => {
-  return (
-    <footer className="footer">
-      ECE WEBCHAT
-    </footer>
-  );
+function Footer() {
+    return (
+        <footer className="footer">
+            ECE WEBCHAT
+        </footer>
+    );
 }
+
+export default Footer;

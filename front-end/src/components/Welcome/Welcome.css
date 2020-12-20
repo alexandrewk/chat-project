@@ -3,6 +3,7 @@
     flex: 1 1 auto;
     display: flex;
     background: rgba(0,0,0,.2);
+    min-height: calc(92vh - 50px);
 }
 
 .card{

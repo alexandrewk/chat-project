@@ -4,44 +4,48 @@ import axios from 'axios';
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 // Layout
-import Link from '@material-ui/core/Link'
+import { Link } from "react-router-dom";
+import { IconButton } from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
 
-export default ({
-  onChannel
-}) => {
-  const [channels, setChannels] = useState([])
-  useEffect( () => {
-    const fetch = async () => {
-      const {data: channels} = await axios.get('http://localhost:3001/channels')
-      setChannels(channels)
-    }
-    fetch()
-  }, [])
-  return (
-    <div className="channels">
-        <div className="channels-home">
-            <ul>
-                <li>Home</li>
+function Channels({onChannel}) {
+    const [channels, setChannels] = useState([])
+    useEffect( () => {
+        const fetch = async () => {
+            const {data: channels} = await axios.get('http://localhost:3001/channels')
+        setChannels(channels)
+        }
+        fetch()
+    }, [])
+    return (
+        <div className="channels">
+            <div className="channels-home">
+            <Link to="/login">
+                <IconButton aria-label="Home">
+                    <HomeIcon/>
+                </IconButton>
+            </Link>    
+            </div>
+            <div className="channels-header">
+                <h2>My Channels</h2>
+            </div>
+            <ul className="channels-list">
+            { channels.map( (channel, i) => (
+                <li key={i} className="channels-link">
+                <Link
+                    href="#"
+                    onClick={ (e) => {
+                    e.preventDefault()
+                    onChannel(channel)
+                    }}
+                    >
+                    {channel.name}
+                </Link>
+                </li>
+            ))}
             </ul>
         </div>
-        <div className="channels-header">
-            <h2>My Channels</h2>
-        </div>
-        <ul className="channels-list">
-        { channels.map( (channel, i) => (
-            <li key={i} className="channels-link">
-            <Link
-                href="#"
-                onClick={ (e) => {
-                e.preventDefault()
-                onChannel(channel)
-                }}
-                >
-                {channel.name}
-            </Link>
-            </li>
-        ))}
-        </ul>
-    </div>
-  );
+    );
 }
+
+export default Channels;

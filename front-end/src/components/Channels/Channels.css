@@ -2,6 +2,7 @@
     font-size: 12px;
     text-align: center;
     border-bottom: 1px solid white;
+    color: white;
 }
 
 .channels-home{
@@ -9,6 +10,7 @@
     font-size: 20px;
     text-align: center;
     border-bottom: 1px solid white;
+    color: white;
 }
 
 .channels-list{
@@ -18,5 +20,6 @@
 .channels-link{
     font-size: 20px;
     padding: .5rem .5rem;
+    color: white;
     white-space: nowrap;
 }
