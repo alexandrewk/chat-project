@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Link  } from "react-router-dom";
 import './Register.css'
+import { Button } from '@material-ui/core';
 
 const axios = require('axios')
 
@@ -28,17 +29,26 @@ class Register extends React.Component {
     };
 
     register = async event =>  {
-        if (this.state.registerParams.user_password !== this.state.registerParams.user_confirm_password) {
-            alert("Passwords don't match");
-        }
-        else {
+        if(this.state.registerParams.user_password === this.state.registerParams.user_confirm_password) {
             axios.post('http://localhost:3001/users', {
             username: this.state.registerParams.user_id,
             password: this.state.registerParams.user_password,
             settings: 0, 
-            }).then(() => this.setState({redirect: true}));
-            event.preventDefault();
+            }).catch(err => {
+                if (err.response) {
+                  alert("Error with the database");
+                } 
+            })
+            .then(() => this.setState({redirect: true}));
             alert("Account successfully created");
+            event.preventDefault();
+        }
+
+        else if (this.state.registerParams.id === "" || this.state.registerParams.user_password === "" ) {
+            alert("Please fill every field");
+        }
+        else{
+            alert("Passwords don't match");
         }
     };
     
@@ -79,9 +89,9 @@ class Register extends React.Component {
                 </form>
             </div>
             <Link to="/login">
-            <button type="button">
+            <Button type="button" variant="contained" color="default" size="small">
                 Login
-            </button>
+            </Button >
             </Link>
         </div>
       );

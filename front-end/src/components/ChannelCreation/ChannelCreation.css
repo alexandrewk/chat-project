@@ -1,0 +1,37 @@
+.channel-creation {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    flex: 1;
+    
+}
+
+.channel-creation-box {
+    color: white;
+    background-color: #494f9e;
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.form-item {
+    display: flex;
+  }
+
+
+input,
+.btn {
+    width: 80%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    opacity: 0.95;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    outline:none;
+    margin-bottom:10px;
+}

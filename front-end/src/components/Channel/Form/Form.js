@@ -37,7 +37,7 @@ function Form ({ addMessage, channel, }) {
         `http://localhost:3001/channels/${channel.id}/messages`
     ,{
         content: content,
-        author: 'test',
+        author: 'Bob',
     })
     addMessage(message)
     setContent('')

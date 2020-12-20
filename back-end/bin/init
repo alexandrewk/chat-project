@@ -61,11 +61,13 @@ const config = {
   await Promise.all([{
         username: 'Bob',
         password: 'test',
+        channels: ["1","2"],
         settings: 0,
   }].map( async (user) => {
-        const {data: {id}} = await axios.post(`http://localhost:${config.port}/users`, {
+            await axios.post(`http://localhost:${config.port}/users`, {
             username: user.username,
             password: user.password,
+            channels: user.channels,
             settings: user.settings,
         })
   }))

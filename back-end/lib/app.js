@@ -1,4 +1,3 @@
-
 const db = require('./db')
 const express = require('express')
 const cors = require('cors')
@@ -12,6 +11,13 @@ app.get('/', (req, res) => {
         '<h1>ECE DevOps Chat</h1>'
     ].join(''))
 })
+
+app.get('/users/:username', function(req,res) {
+    db.get(req.params.username, function(err,data){
+        res.json({value:data});
+    });
+});
+
 
 // Channels
 
@@ -73,5 +79,6 @@ app.put('/users/:id', async (req, res) => {
     const user = await db.users.update(req.body)
     res.json(user)
 })
+
 
 module.exports = app

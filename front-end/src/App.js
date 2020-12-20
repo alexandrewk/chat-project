@@ -9,12 +9,16 @@ import Main from './components/Main/Main';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Settings from './components/Settings/Settings';
-import {BrowserRouter as Router,Switch,Route, Redirect} from "react-router-dom";
+import ChannelCreation from './components/ChannelCreation/ChannelCreation';
+import { BrowserRouter as Router,Switch,Route,Redirect} from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { UserProvider } from './UserContext';
 
 function App() {
-    window.localStorage.clear()
+    //window.localStorage.clear()
     const [user, setUser] = useState(false)
+
+
     const handleLogin = e => {
         e.preventDefault();
         setUser(true);
@@ -51,6 +55,13 @@ function App() {
                 <div className="App">
                     <Header />
                         <Settings/>
+                    <Footer />
+                </div>
+            </ProtectedRoute>
+            <ProtectedRoute exact path="/creation">
+                <div className="App">
+                    <Header />
+                        <ChannelCreation/>
                     <Footer />
                 </div>
             </ProtectedRoute>

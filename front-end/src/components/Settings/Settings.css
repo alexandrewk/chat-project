@@ -1,11 +1,21 @@
 .settings {
     background-color: #373B44;
-    overflow: hidden;
-    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    color: white;
+    flex: 1;
 }
+
+.settings-box {
+    position: absolute;
+    top: 65px;
+    left: 780px;
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
 .button {
     width: 300px;
 } 

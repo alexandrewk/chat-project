@@ -1,11 +1,11 @@
-import {Component} from 'react';
+import { Component } from 'react';
 import { Redirect, Link  } from "react-router-dom";
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import "./Login.css"
+import { Button } from '@material-ui/core';
 
 const axios = require('axios')
-
 
 class Login extends Component {
     constructor(props) {
@@ -13,8 +13,8 @@ class Login extends Component {
         this.state = {
             islogged: false,
             loginParams: {
-              user_id: "",
-              user_password: ""
+                user_id: "",
+                user_password: ""
             }
         };
     }
@@ -38,7 +38,7 @@ class Login extends Component {
         });
         }
         else{
-            alert("Username and password don't match");
+            alert("Username or password don't match");
         }
         event.preventDefault();
     };
@@ -73,9 +73,9 @@ class Login extends Component {
                     </form>
                 </div>
                 <Link to="/register">
-                <button type="button">
-                    Register
-                </button>
+                    <Button type="button" variant="contained" color="default" size="small">
+                        Register
+                    </Button>
                 </Link>
             </div>
         );

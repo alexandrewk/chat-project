@@ -100,6 +100,7 @@ module.exports = {
         return merge(user, {id: id})
     },
 
+
     list: async () => {
         return new Promise( (resolve, reject) => {
             const users = []
@@ -128,7 +129,8 @@ module.exports = {
         const original = store.users[id]
         if(!original) throw Error('Unregistered user id')
         delete store.users[id]
-    }
+    },
+
 
   },
   admin: {
